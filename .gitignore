@@ -12,6 +12,7 @@ data
 venv3
 .ipynb_checkpoints
 **.ipynb
+.env
 
 # C extensions
 *.so
