@@ -1,7 +1,5 @@
 # Discrimination Detection API with OpenAI GPT-3
 
-![Project Image](project_image.png) (Include an image if relevant)
-
 ## Table of Contents
 
 - [Description](#description)
@@ -15,7 +13,7 @@
 - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
+<!-- - [License](#license) -->
 
 ## Description
 
@@ -24,7 +22,7 @@ This project is a Flask-based API that utilizes the OpenAI GPT-3 language model 
 ## Features
 
 - Accepts PDF files as input.
-- Uses the OpenAI GPT-3 language model for discrimination detection.
+- Uses the OpenAI GPT-3 (gpt-3.5-turbo) language model for discrimination detection.
 - Provides discrimination detection results for various communities.
 
 ## Getting Started
@@ -54,10 +52,9 @@ Before running the project, ensure you have the following prerequisites installe
 
 3. Set your OpenAI API key:
 
-   Replace `"YOUR_API_KEY"` with your actual OpenAI API key in the `app.py` file:
-
-   ```python
-   openai.api_key = "YOUR_API_KEY"
+   Create a .env file with the following variable
+   ```
+   OPENAI_API_KEY=****
    ```
 
 ## Usage
@@ -75,11 +72,11 @@ To use the API:
 ## Endpoints
 
 - `GET /`: Provides a web interface for uploading PDF files.
-- `POST /detect_discrimination`: Accepts a PDF file, extracts text, and analyzes it for discrimination using the OpenAI GPT-3 model.
+- `POST /upload`: Accepts a PDF file, extracts text, and analyzes it for discrimination using the OpenAI GPT-3 model.
 
 ## Example
 
-To detect discrimination in a PDF document, use the `/detect_discrimination` endpoint with a PDF file:
+To detect discrimination in a PDF document, use the `/upload` endpoint with a PDF file:
 
 1. Upload a PDF document through the web interface.
 2. Submit the form to analyze the document.
