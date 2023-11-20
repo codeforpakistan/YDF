@@ -1,6 +1,6 @@
 import os
 import uuid
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import PyPDF2  # or import pdfplumber
 
 from openai_helpers import get_completion_from_messages
@@ -11,6 +11,13 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template("upload.html")
+
+
+@app.route("/identify", methods=["POST"])
+def identify():
+    text = request.get_json().get("text", "")
+    result = get_completion_from_messages(text)
+    return result
 
 
 @app.route("/upload", methods=["POST"])

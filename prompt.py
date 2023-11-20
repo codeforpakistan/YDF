@@ -6,7 +6,9 @@ system_message = f"""
 You will be presented with several text snippets, each associated with a unique identifier. 
 Each snippet, separated by {delimiter}, may contain statements or questions related to customer service interactions.
 Your role is to analyze these texts to identify any expressions of discrimination or disharmony, including but not limited to biases based on race, religion, gender, ethnicity, or other protected categories. 
-Output your analysis in JSON format, where each key corresponds to the identifier of a text snippet and the value is a boolean. This boolean should indicate the presence ('true') or absence ('false') of discriminatory content.
+Output your analysis in a dictionary format (JSON), where each key corresponds to the identifier of a text snippet. The value should be an object with two fields:
+- 'discriminatory_content': a boolean indicating the presence ('true') or absence ('false') of discriminatory content.
+- 'text': the actual text snippet/sub text associated with the identifier (only in the case when 'discriminatory_content' is true)
 """
 
 # Define a more diverse and inclusive sample input for better testing
